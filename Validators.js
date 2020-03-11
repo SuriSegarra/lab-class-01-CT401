@@ -1,4 +1,4 @@
-const { getCaster } = require('./types.js');
+const { getCaster } = require('./lib/types.js');
 module.exports = class Validator {
   //Validator takes two properties
   //field  which is the field we are goign to validate

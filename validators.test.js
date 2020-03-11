@@ -1,4 +1,4 @@
-const Validator = require('./lib/Validators');
+const Validator = require('./Validators');
 describe('Validator', () => {
   let nameValidator;
   beforeEach(() => {
