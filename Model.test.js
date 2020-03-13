@@ -16,5 +16,38 @@ describe('Model class', () => {
         type: String
       }
     });
+    const Dog = new Model('Dog', schema);
+
+    return Dog
+      .create({
+        name: 'Tom',
+        age: 4,
+        weight: '10 lbs'
+      })
+      .then(dog => {
+        expect(dog).toEqual({
+          _id: expect.any(String),
+          name: 'Tom',
+          age: 4,
+          weight: '10 lbs'
+        });
+      });
+  });
+
+  it('finds by id', () => {
+    const schema = new Schema({
+      name: {
+        type: String,
+        required: true
+      },
+      age: {
+        type: Number,
+        required: true
+      },
+      weight: {
+        type: String,
+        required: true
+      }
+    });
   });
 });
