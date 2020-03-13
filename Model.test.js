@@ -16,16 +16,16 @@ describe('Model class', () => {
         type: String
       }
     });
-    const Dog = new Model('Dog', schema);
+    const Cat = new Model('Cat', schema);
 
-    return Dog
+    return Cat
       .create({
         name: 'Tom',
         age: 4,
         weight: '10 lbs'
       })
-      .then(dog => {
-        expect(dog).toEqual({
+      .then(cat => {
+        expect(cat).toEqual({
           _id: expect.any(String),
           name: 'Tom',
           age: 4,
@@ -50,26 +50,27 @@ describe('Model class', () => {
       }
     });
 
-    const Dog = new Model('Dog', schema);
+    const Cat = new Model('Cat', schema);
 
-    return Dog
+    return Cat
       .create({
-        name: 'spot',
-        age: 5,
-        weight: '20 lbs'
+        name: 'Tom',
+        age: 4,
+        weight: '10 lbs'
       })
-      .then(dog => {
-        return Dog
-          .findByIdAndUpdate(dog._id, { name: 'rover' });
+      .then(cat => {
+        return Cat
+          .findByIdAndUpdate(cat._id, { name: 'rover' });
       })
-      .then(updatedDog => {
-        expect(updatedDog).toEqual({
+      .then(updatedCat => {
+        expect(updatedCat).toEqual({
           _id: expect.any(String),
-          name: 'rover',
-          age: 5,
-          weight: '20 lbs'
+          name: 'Tim',
+          age: 4,
+          weight: '10 lbs'
         });
       });
   });
-  });
+  
+});
 
